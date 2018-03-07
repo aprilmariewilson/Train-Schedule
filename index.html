@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Train Schedule</title>
+	<!-- Latest compiled and minified CSS -->
+	<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+	<div class="class container">
+		<div class="jumbotron">
+			<div class="container">
+				<h1>Train Schedule</h1>
+				<p>Get up to date infromation on current train schedules.</p>
+			</div>
+		</div>
+
+		<div class="panel panel-default">
+			<div class="panel heading">Current Train Schedule</div>
+			<div class="panel-body">
+				<table class="table currentTrain">
+					<thead>
+						<tr>
+							<th scope="col">Train Name</th>
+							<th scope="col">Destination</th>
+							<th scope="col">Frequency (min)</th>
+							<th scope="col">Next Arrival</th>
+							<th scope="col">Minutes Away</th>
+						</tr>
+					</thead>
+					<tbody>
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div class="panel panel-default">
+			<div class="panel heading">Add Train</div>
+			<div class="panel-body">
+				<form>
+					<div class="form-group">
+						<label for="exampleInputName1">Train Name</label>
+						<input type="name" class="form-control name" id="exampleInputname1" aria-describedby="nameHelp">
+						<small id="nameHelp" class="form-text text-muted"></small>
+					</div>
+					<div class="form-group">
+						<label for="exampleInputDestination1">Destination</label>
+						<input type="destination" class="form-control destination" id="exampleInputDestination1" aria-describedby="destinationHelp">
+						<small id="destinationHelp" class="form-text text-muted"></small>
+					</div>
+					<div class="form-group">
+						<label for="exampleInputTime1">First Train Time (HH:mm-military time)</label>
+						<input type="time" class="form-control time" id="exampleInputTime1">
+					</div>
+					<div class="form-group">
+						<label for="exampleInputFrequency1">Frequency (min)</label>
+						<input type="frequency" class="form-control frequency" id="exampleInputFrequency1" aria-describedby="FrequencyHelp">
+						<small id="FrequencyHelp" class="form-text text-muted"></small>
+					</div>
+					<button type="submit" class="btn btn-primary" id="submitButton">Submit</button>
+				</form>
+			</div>
+		</div>
+
+	</div>
+	<!--container div-->
+	<style>
+		.jumbotron {
+			color: aliceblue;
+			background-color: navy;
+			text-align: center;
+		}
+		.panel{
+			border: 4px solid navy;
+		}
+		.heading{
+			color: aliceblue;
+			background-color: navy;
+		}
+		#submitButton{
+			background-color: navy;
+		}
+	</style>
+	<script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+	<script src="assets/moment.js"></script>
+
+
+	<script src="assets/app.js"></script>
+</body>
+
+</html>
