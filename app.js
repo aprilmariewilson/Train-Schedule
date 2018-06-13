@@ -47,7 +47,9 @@ firebase.initializeApp(config);
 	database.ref().on('child_added', function(snapShot) {
 		var data = snapShot.val();
 		var formattedTime = moment(data.time).format('HH:mm');
+		var timeToNextTrain = timePassed % childSnapshot.frequency;
 		var minutesAway = moment().diff(moment(formattedTime), 'minutes');
+		var trainCalc = moment().add(timeToNextTrain, "minutes").format("HH:mm");
 		console.log('child added', snapShot.val());
 		var tbody = $('#currentTrain > tbody');
 		var tr = $('<tr>');
@@ -55,8 +57,10 @@ firebase.initializeApp(config);
 		var tdDestination = $('<td>').text(data.destination);
 		var tdFrequency = $('<td>').text(formattedtime);
 		var tdArrival = $('<td>').text(nextArrival);
-		var tdMinutesAway = $('<td>').text(frequency - data.nextArrival);
-
+		var tdMinutesAway = $('<td>').text(trainCalc);
+		console.log(trainCalc);
+		console.log(timeToNextTrain);
+		consol.log(minutesAway);
 
 		tr.append(tdName, tdDestination, tdFrequency, tdArrival, tdMinutesAway);
 		tbody.append(tr);
